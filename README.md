@@ -9,6 +9,16 @@ localizer, train-only masked-context self-supervised learning (SSL), and a
 dual-head pancreas/lesion prediction network under patient-grouped development
 and source-separated held-out evaluation.
 
+## Archived release and DOI
+
+The reproducibility materials corresponding to the frozen public release `v1.0.0` are archived on Zenodo:
+
+**Version-specific DOI:** https://doi.org/10.5281/zenodo.21998228
+
+**All-versions DOI:** https://doi.org/10.5281/zenodo.21998227
+
+For exact reproducibility of the study, cite the version-specific DOI above.
+
 ## Repository scope
 
 This repository is intended to expose study-generated reproducibility material,
