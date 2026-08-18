@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository."
+title: "Compact Self-Supervised 3D Deep Learning for CT-Based Pancreatic Lesion Detection and Segmentation"
+version: 1.0.0
+date-released: 2026-08-18
+type: software
+license: MIT
+authors:
+  - given-names: "Zaid H."
+    family-names: "Alsawaff"
+    affiliation: "Department of Medical Instrumentation Engineering Technology, Technical Engineering College, Northern Technical University, Mosul, Iraq"
+  - given-names: "Awfa"
+    family-names: "Aladwani"
+    affiliation: "Computer Center, University of Mosul, Mosul, Iraq"
+  - given-names: "Entisar Younis"
+    family-names: "Abd Al-Jabbar"
+    affiliation: "Department of Medical Instrumentation Technology, Technical Engineering College, Northern Technical University, Mosul 41001, Iraq"
+  - given-names: "Antonio"
+    family-names: "Cannuli"
+    affiliation: "Department of Engineering, University of Messina, C.da di Dio, 98166 Messina, Italy"
+  - given-names: "Fatma"
+    family-names: "Kandemirli"
+    affiliation: "Department of Biomedical Engineering, Kastamonu University, Kastamonu, Turkey"
+keywords:
+  - "pancreatic ductal adenocarcinoma"
+  - "computed tomography"
+  - "self-supervised learning"
+  - "3D deep learning"
+  - "medical image segmentation"
+  - "reproducibility"
+repository-code: "https://github.com/zaidsawaff/pdac-compact-3d-ssl"
+url: "https://github.com/zaidsawaff/pdac-compact-3d-ssl"
