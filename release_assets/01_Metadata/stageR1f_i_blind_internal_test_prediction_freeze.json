@@ -1,0 +1,36 @@
+{
+  "stage": "R1F-I",
+  "created_at_utc": "2026-08-13T13:31:35.767167+00:00",
+  "prediction_freeze_complete": true,
+  "inference_scope": "internal_test_CT_only_blind_inference",
+  "internal_test_cases": 293,
+  "diagnostic_labels_accessed": 0,
+  "test_masks_accessed": 0,
+  "selected_arm": "SSL_INITIALIZED",
+  "selected_checkpoint_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Revision_R1/StageR1B_LeakageFreeDualArm/SSL_INITIALIZED/stageR1b_best.pt",
+  "selected_checkpoint_sha256": "f571a611c4125ef92b80c51e3276fb03a02d4073317aa2460dca1649ae655f81",
+  "localizer_checkpoint_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Localizer/F1_96x96x160/stage2a_localizer_best.pt",
+  "localizer_checkpoint_sha256": "bbf2825174f2a93fe07d37fb3bbbc51b0e7767427007bd187931bc1534ca4978",
+  "crop_shape": [
+    240,
+    192,
+    128
+  ],
+  "crop_spacing_mm": [
+    1.25,
+    1.25,
+    2.0
+  ],
+  "candidate_protocol_signature": "a10ae14a708e66580232454f6473b840bb70bd92d28d5a9f569208b889307379",
+  "locked_deployment_threshold": 0.4620599448680877,
+  "test_specific_model_adjustment": "prohibited_and_not_performed",
+  "test_specific_threshold_adjustment": "prohibited_and_not_performed",
+  "probability_storage": {
+    "dtype": "uint16",
+    "scale": 65535.0,
+    "decoding": "probability_uint16 / 65535"
+  },
+  "prediction_manifest_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/01_Metadata/stageR1f_i_blind_internal_test_prediction_manifest.csv",
+  "candidate_ledger_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/02_Quality_Control/stageR1f_i_blind_internal_test_candidate_ledger.csv",
+  "resume_ledger_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/02_Quality_Control/stageR1f_i_blind_internal_test_resume_ledger.csv"
+}

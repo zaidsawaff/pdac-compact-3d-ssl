@@ -1,0 +1,46 @@
+{
+  "stage": "R1A",
+  "reviewer_correction": "TRAIN_ONLY_SSL_NO_MAIN_VALIDATION_EXPOSURE",
+  "created_at_utc": "2026-08-08T02:20:02.178127+00:00",
+  "method": "MASKED_CONTEXT_RECONSTRUCTION_3D_CNN",
+  "architecture": "COMPACT_RESIDUAL_3D_UNET_AUTOENCODER",
+  "training_cases": 1376,
+  "main_validation_cases": 295,
+  "main_validation_CT_arrays_accessed_during_SSL": 0,
+  "checkpoint_selection_policy": "FIXED_FINAL_EPOCH_30",
+  "ssl_early_stopping": "DISABLED_TO_AVOID_MAIN_VALIDATION_REUSE",
+  "locked_test_cases_accessed": 0,
+  "mask_label_arrays_accessed": 0,
+  "input_crop_shape": [
+    240,
+    192,
+    128
+  ],
+  "training_patch_shape": [
+    128,
+    128,
+    64
+  ],
+  "mask_block_shape": [
+    16,
+    16,
+    8
+  ],
+  "mask_ratio": 0.45,
+  "intensity_normalization": "(clip(HU,-200,300)-50)/250",
+  "case_specific_normalization": "PROHIBITED",
+  "selected_batch_size": 2,
+  "gradient_accumulation_steps": 2,
+  "effective_batch_size": 4,
+  "maximum_epochs": 30,
+  "learning_rate": 0.0002,
+  "minimum_learning_rate": 1e-06,
+  "weight_decay": 0.0001,
+  "optimizer": "AdamW",
+  "scheduler": "CosineAnnealingLR",
+  "mixed_precision": true,
+  "model_parameters": 1642377,
+  "encoder_parameters": 1332480,
+  "final_checkpoint_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Revision_R1/StageR1A_TrainOnlyMaskedContext3DCNN/stageR1a_ssl_final.pt",
+  "last_checkpoint_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Revision_R1/StageR1A_TrainOnlyMaskedContext3DCNN/stageR1a_ssl_last.pt"
+}

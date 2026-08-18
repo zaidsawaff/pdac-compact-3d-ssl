@@ -1,0 +1,25 @@
+{
+  "stage": "R1C",
+  "reviewer_correction": "CONTROLLED_SSL_VS_RANDOM_AFTER_TRAIN_ONLY_SSL",
+  "created_at_utc": "2026-08-11T17:17:35.687504+00:00",
+  "selected_arm": "SSL_INITIALIZED",
+  "selected_checkpoint_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Revision_R1/StageR1B_LeakageFreeDualArm/SSL_INITIALIZED/stageR1b_best.pt",
+  "selected_checkpoint_sha256": "f571a611c4125ef92b80c51e3276fb03a02d4073317aa2460dca1649ae655f81",
+  "selection_metric": "0.70*mean_PDAC_lesion_Dice + 0.30*mean_pancreas_Dice",
+  "selection_score": 0.5706430810995752,
+  "SSL_minus_random_selection_score_difference": 0.03549892111042696,
+  "SSL_minus_random_selection_score_difference_patient_bootstrap_95_CI": [
+    0.009376062352631753,
+    0.05819996702521959
+  ],
+  "SSL_minus_random_AUC_difference": -0.03713768115942029,
+  "SSL_minus_random_AUC_difference_patient_bootstrap_95_CI": [
+    -0.08279336249332427,
+    0.009018459068392683
+  ],
+  "bootstrap_replicates": 2000,
+  "full_validation_cases": 295,
+  "ssl_pretraining_main_validation_CT_arrays_accessed": 0,
+  "locked_test_cases_accessed": 0,
+  "next_stage": "validation_only_component_and_FROC_calibration"
+}

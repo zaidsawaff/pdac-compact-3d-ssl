@@ -1,0 +1,42 @@
+{
+  "stage": "3B",
+  "created_at_utc": "2026-07-31T14:42:26.090975+00:00",
+  "dataset_name": "PANORAMA_LOCAL_DEVELOPMENT_E5_V1",
+  "dataset_frozen": true,
+  "cases": 1671,
+  "train_cases": 1376,
+  "validation_cases": 295,
+  "PDAC_cases": 491,
+  "non_PDAC_cases": 1180,
+  "crop_shape": [
+    240,
+    192,
+    128
+  ],
+  "crop_spacing_mm": [
+    1.25,
+    1.25,
+    2.0
+  ],
+  "intensity_window_HU": [
+    -200,
+    300
+  ],
+  "mask_labels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "minimum_accepted_source_voxel_coverage": 0.99,
+  "persistent_dataset_size_bytes": 9038981613,
+  "frozen_manifest_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/01_Metadata/stage3b_e5_frozen_dataset_manifest.csv",
+  "frozen_manifest_sha256": "46648b3a8612bf1ee89b3a6b1082fb4c080db069d1fe998820c08b3f443b967e",
+  "canonical_qc_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/02_Quality_Control/stage3b_e5_full_qc.csv",
+  "canonical_qc_sha256": "340585260a6b37c2f4af7fc57d68499392a5dfabe06d543f5be36f3ad7917a49",
+  "locked_test_cases_accessed": 0,
+  "raw_files_modified": false
+}

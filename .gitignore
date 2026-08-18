@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Notebook / IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local/raw medical data: never commit
+data/
+raw/
+raw_data/
+CT/
+ct/
+source_masks/
+raw_masks/
+*.dcm
+*.nii
+*.nii.gz
+
+# Manuscript files are submitted separately
+*.docx
+*.doc

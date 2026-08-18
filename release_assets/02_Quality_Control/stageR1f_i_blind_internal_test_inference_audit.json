@@ -1,0 +1,31 @@
+{
+  "stage": "R1F-I",
+  "created_at_utc": "2026-08-13T13:31:35.775242+00:00",
+  "result": "PASS_BLIND_INTERNAL_TEST_PREDICTIONS_FROZEN",
+  "all_checks_pass": true,
+  "readiness_checks": {
+    "Exactly 293 blind prediction rows": true,
+    "Exactly 293 unique blind study IDs": true,
+    "Prediction IDs exactly match the internal-test lock": true,
+    "Persistent folder contains exactly 293 NPZ files": true,
+    "Persistent filenames exactly match the internal-test lock": true,
+    "Every prediction file passed hash verification": true,
+    "All cases used the locked SSL checkpoint": true,
+    "All cases used the locked localizer checkpoint": true,
+    "All cases used the locked candidate protocol": true,
+    "Every candidate row belongs to a locked test study": true,
+    "All probability quantization errors are bounded": true,
+    "Every case produced a pancreas gate seed": true,
+    "No diagnostic label was accessed": true,
+    "No test mask was accessed": true,
+    "No threshold was changed on test": true
+  },
+  "durably_completed": 293,
+  "candidate_rows": 1385,
+  "mean_candidates_per_case": 4.726962457337884,
+  "case_positive_fraction_at_locked_threshold": 0.7133105802047781,
+  "diagnostic_labels_accessed": 0,
+  "test_masks_accessed": 0,
+  "prediction_manifest_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/01_Metadata/stageR1f_i_blind_internal_test_prediction_manifest.csv",
+  "prediction_freeze_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/01_Metadata/stageR1f_i_blind_internal_test_prediction_freeze.json"
+}

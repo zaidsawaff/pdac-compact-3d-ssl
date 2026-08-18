@@ -1,0 +1,31 @@
+{
+  "stage": "R1B",
+  "reviewer_correction": "CONTROLLED_SSL_VS_RANDOM_AFTER_TRAIN_ONLY_SSL",
+  "created_at_utc": "2026-08-11T13:31:58.536485+00:00",
+  "arms": [
+    "SSL_INITIALIZED",
+    "RANDOM_INITIALIZED"
+  ],
+  "maximum_epochs_per_arm": 30,
+  "samples_per_epoch": 1376,
+  "PDAC_samples_per_epoch": 688,
+  "non_PDAC_samples_per_epoch": 688,
+  "patch_shape": [
+    128,
+    128,
+    64
+  ],
+  "selected_batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "validation_monitor_cases": 96,
+  "validation_monitor_PDAC": 48,
+  "validation_monitor_non_PDAC": 48,
+  "validation_cadence_epochs": 2,
+  "selection_score": "0.70*PDAC_lesion_Dice + 0.30*all_case_pancreas_Dice",
+  "sliding_window_overlap": 0.5,
+  "probability_threshold": 0.5,
+  "ssl_pretraining_cases": 1376,
+  "ssl_main_validation_CT_arrays_accessed": 0,
+  "ssl_initialization_checkpoint": "/content/drive/MyDrive/PDAC_Public_Q1_Project/04_Models/Revision_R1/StageR1A_TrainOnlyMaskedContext3DCNN/stageR1a_ssl_final.pt",
+  "locked_test_cases_accessed": 0
+}
