@@ -18,8 +18,8 @@ The original archived software release is:
 - Version-specific DOI: `10.5281/zenodo.21998228`
 - Concept / all-versions DOI: `10.5281/zenodo.21998227`
 
-`v1.1.0` is the expanded reproducibility release. Its version-specific DOI
-should be inserted here after the new Zenodo release is published.
+`v1.1.0` is the expanded reproducibility release.
+- Version-specific DOI: `10.5281/zenodo.22047691`
 
 ---
 
@@ -386,8 +386,8 @@ For the archived v1.0.0 software release:
 https://doi.org/10.5281/zenodo.21998228
 ```
 
-For the expanded v1.1.0 release, use its version-specific DOI after the
-new Zenodo archive has been published.
+For the expanded v1.1.0 release, use:
+https://doi.org/10.5281/zenodo.22047691
 
 ---
 
