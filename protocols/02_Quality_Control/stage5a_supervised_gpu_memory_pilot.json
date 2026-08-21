@@ -1,0 +1,22 @@
+{
+  "stage": "5A",
+  "created_at_utc": "2026-08-01T09:50:30.214011+00:00",
+  "gpu": "Tesla T4",
+  "gpu_memory_GiB": 14.56317138671875,
+  "patch_shape": [
+    128,
+    128,
+    64
+  ],
+  "candidate_results": [
+    {
+      "batch_size": 4,
+      "status": "PASS",
+      "peak_allocated_GiB": 5.865813255310059,
+      "pilot_loss": 0.8373959064483643
+    }
+  ],
+  "selected_batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "effective_batch_size": 4
+}

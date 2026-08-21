@@ -1,181 +1,402 @@
 # Compact Self-Supervised 3D Deep Learning for CT-Based Pancreatic Lesion Detection and Segmentation
 
-Reproducibility repository for the study **“Compact Self-Supervised 3D Deep
-Learning for CT-Based Pancreatic Lesion Detection and Segmentation.”**
+Reproducibility repository for the study:
 
-The project evaluates a compact 3D CT pipeline for pancreatic ductal
-adenocarcinoma (PDAC) analysis. The pipeline combines a lightweight spatial
-localizer, train-only masked-context self-supervised learning (SSL), and a
-dual-head pancreas/lesion prediction network under patient-grouped development
-and source-separated held-out evaluation.
+**Compact Self-Supervised 3D Deep Learning for CT-Based Pancreatic Lesion Detection and Segmentation**
+
+This repository contains the study-generated source code, frozen protocol
+metadata, reproducibility utilities, and documented execution order required
+to reconstruct the computational workflow from the original public data sources.
+
+---
 
 ## Archived release and DOI
 
-The reproducibility materials corresponding to the frozen public release `v1.0.0` are archived on Zenodo:
+The original archived software release is:
 
-**Version-specific DOI:** https://doi.org/10.5281/zenodo.21998228
+- Version: `v1.0.0`
+- Version-specific DOI: `10.5281/zenodo.21998228`
+- Concept / all-versions DOI: `10.5281/zenodo.21998227`
 
-**All-versions DOI:** https://doi.org/10.5281/zenodo.21998227
+`v1.1.0` is the expanded reproducibility release. Its version-specific DOI
+should be inserted here after the new Zenodo release is published.
 
-For exact reproducibility of the study, cite the version-specific DOI above.
+---
 
-## Repository scope
+## What changed in v1.1.0
 
-This repository is intended to expose study-generated reproducibility material,
-including:
+The initial v1.0.0 archive emphasized auditability and selected study artifacts.
+The expanded v1.1.0 release additionally provides:
 
-- analysis and training code used in the final supervised/SSL comparison;
-- locked split and preprocessing protocols;
-- quality-control and audit records;
-- validation/model-selection locks;
-- prediction-freeze manifests;
-- held-out evaluation summaries;
-- selected model checkpoints;
-- SHA-256 checksums and release inventories.
+- the complete 35-script scientific workflow;
+- the frozen Stage 1–3 data-preparation pipeline;
+- the definitive Revision R1 training and evaluation pipeline;
+- the post-freeze R2 reviewer-analysis script;
+- portable project/runtime path configuration;
+- workspace initialization;
+- automatic retrieval of the exact PANORAMA labels used in the study;
+- frozen remote-ZIP metadata for direct CT retrieval from the public archives;
+- explicit execution order and legacy-workflow clarification;
+- reproducibility smoke-test support.
 
-Raw CT volumes and source segmentation masks are intentionally **not**
-redistributed in this repository. They originate from third-party public
-datasets and should be obtained from their original repositories under the
-applicable terms.
+---
 
-## Study cohorts
+## Repository layout
 
-The audited study cohort contains 2,238 CT studies from 2,224 unique patients:
-676 PDAC and 1,562 non-PDAC studies.
+```text
+.
+├── README.md
+├── docs/
+│   └── RUN_ORDER.md
+├── scripts/
+│   ├── init_workspace.py
+│   └── bootstrap_panorama_labels.py
+├── src/
+│   ├── pipeline/
+│   ├── revision_r1/
+│   └── revision_r2/
+└── protocols/
+    ├── 01_Metadata/
+    └── 02_Quality_Control/
+```
 
-The PANORAMA-local development cohort was patient-grouped into:
+`src/pipeline/` contains the Stage 1–7 development/provenance scripts.
 
-- 1,376 training studies;
-- 295 validation studies;
-- 293 held-out internal-test studies.
+`src/revision_r1/` contains the definitive final revision training and
+evaluation workflow.
 
-Source-separated held-out cohorts contain:
+`src/revision_r2/` contains post-freeze supplementary/reviewer analyses.
 
-- 194 Medical Segmentation Decathlon (MSD) studies;
-- 80 NIH negative-only studies.
+`protocols/` contains small study-generated frozen metadata and protocol
+artifacts required to reproduce the locked experimental workflow.
 
-The external/source-separated cohorts were not used for weight updates,
-architecture selection, preprocessing tuning, or threshold calibration.
+---
 
 ## Public data sources
 
-The study used the official PANORAMA public training/development release,
-including four Zenodo batch records:
+### PANORAMA labels
 
-- Batch 1 v3: https://doi.org/10.5281/zenodo.13715870
-- Batch 2 v2: https://doi.org/10.5281/zenodo.13742336
-- Batch 3: https://doi.org/10.5281/zenodo.11034011
-- Batch 4 v1.0: https://doi.org/10.5281/zenodo.10999754
+The exact label repository state used by the study is frozen at commit:
 
-Annotations and clinical metadata were obtained from the official
-`DIAGNijmegen/panorama_labels` repository at commit `bf1d6ba3`.
+```text
+bf1d6ba3
+```
 
-Additional source-separated data derive from:
+The bootstrap utility retrieves:
 
-- Medical Segmentation Decathlon;
-- NIH Pancreas-CT collection, DOI: https://doi.org/10.7937/K9/TCIA.2016.tNB1kqBU
+- 482 manual label volumes;
+- 1,756 automatic label volumes;
+- 2,238 total label volumes.
 
-Users should obtain all source imaging data directly from the original
-providers rather than from this repository.
+The labels are retrieved from their original public repository rather than
+redistributed in this software release.
+
+### CT volumes
+
+Raw CT data are not redistributed by this repository.
+
+The frozen remote member inventory records the archive, ZIP member, byte
+offset, compressed/uncompressed size, compression method, and CRC32 required
+to recover each study from the original public Zenodo archives.
+
+The pipeline uses HTTP byte-range requests, so the complete source archives
+do not need to be downloaded before processing.
+
+---
+
+## Locked study cohort
+
+The frozen study split contains 2,238 studies:
+
+- Training: 1,376
+- Validation: 295
+- Internal test: 293
+- External MSD partition: 194
+- NIH negative stress-test partition: 80
+
+The development cohort used before final test evaluation therefore contains
+1,671 studies (`train + validation`).
+
+The locked test partitions are not used during Stage 1A development preprocessing.
+
+---
+
+
+## Frozen reference artifacts
+
+The `release_assets/` directory is retained in v1.1.0 as a frozen reference
+package containing selected checkpoints, prediction manifests, protocol locks,
+quality-control audits, and final publication-result summaries produced by the
+completed study workflow.
+
+Important examples include:
+
+- the frozen Stage 2A localizer checkpoint;
+- the final train-only R1A self-supervised checkpoint;
+- the R1B SSL-initialized supervised checkpoint;
+- the matched R1B randomly initialized supervised checkpoint;
+- the pre-freeze model/threshold lock;
+- blind internal-test and external-test prediction manifests;
+- final R1 evidence manifests and audits; and
+- the frozen publication metric summary.
+
+These artifacts are provided so that researchers can inspect and verify the
+reported frozen study state without having to regenerate every trained model
+before examining the released evidence.
+
+### Authoritative executable source
+
+For v1.1.0, the authoritative executable scientific source code is located in:
+
+```text
+src/pipeline/
+src/revision_r1/
+src/revision_r2/
+scripts/
+```
+
+The small historical code subset under:
+
+```text
+release_assets/05_Code/
+```
+
+is retained only as part of the earlier frozen reference package. It is **not**
+the authoritative source tree for the expanded v1.1.0 reproducibility release.
+
+The definitive execution sequence is documented in:
+
+```text
+docs/RUN_ORDER.md
+```
+
+### Data and licensing boundary
+
+`release_assets/` does not contain raw CT volumes or raw medical segmentation
+datasets. Third-party medical datasets remain subject to their original access,
+licensing, and attribution terms and are not relicensed under this repository's
+MIT license.
+
+See `THIRD_PARTY_DATA_NOTICE.md` for the applicable data-source and licensing
+boundary.
 
 ## Environment
 
-Tested audit environment:
+Python 3.12 was used for the archived environment audit.
 
-- Python 3.12.13
-- NumPy 2.0.2
-- pandas 2.2.2
-- SciPy 1.16.3
-- scikit-learn 1.6.1
-- PyTorch 2.11.0+cpu
-
-Install the Python dependencies with:
+Install the repository dependencies before running the pipeline:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-See `ENVIRONMENT.md` for the recorded audit environment.
+GPU acceleration is required for the practical full training workflow.
+CPU execution is suitable for metadata checks and limited smoke tests but is
+not intended for full model training.
 
-## Reproducibility bundle
+---
 
-The release exporter builds a `release_assets/` directory and produces:
+## Configure paths
 
-- `release_asset_manifest.json`
-- `release_asset_inventory.csv`
-- `SHA256SUMS.txt`
-- `MISSING_ASSETS.txt`
+The code no longer requires one fixed Google Drive location.
 
-The exporter verifies known checkpoint hashes and records missing or ambiguous
-assets rather than silently ignoring them.
-
-To build the release bundle from the original project tree:
+Set:
 
 ```bash
-python export_release_assets.py
+export PDAC_PROJECT_ROOT="/absolute/path/to/PDAC_Public_Q1_Project"
+export PDAC_RUNTIME_ROOT="/absolute/path/to/runtime"
 ```
 
-The default project root expected by the exporter is:
+`PDAC_PROJECT_ROOT` stores persistent outputs.
 
-```text
-/content/drive/MyDrive/PDAC_Public_Q1_Project
-```
+`PDAC_RUNTIME_ROOT` stores temporary caches and scratch files.
 
-## Integrity verification
-
-From the root of the generated `release_assets/` directory:
+For Google Colab, for example:
 
 ```bash
-sha256sum -c SHA256SUMS.txt
+export PDAC_PROJECT_ROOT="/content/drive/MyDrive/PDAC_Public_Q1_Project"
+export PDAC_RUNTIME_ROOT="/content"
 ```
 
-The audited bundle contained no known checkpoint hash mismatches.
+---
 
-## Repository structure
+## Step 1 — Initialize a clean workspace
+
+From the repository root:
+
+```bash
+python scripts/init_workspace.py \
+  --project-root "$PDAC_PROJECT_ROOT" \
+  --repro-root .
+```
+
+This creates the required directory structure and installs the frozen
+study-generated prerequisite metadata into the new workspace.
+
+---
+
+## Step 2 — Retrieve the exact labels
+
+```bash
+python scripts/bootstrap_panorama_labels.py \
+  --project-root "$PDAC_PROJECT_ROOT"
+```
+
+Expected output:
 
 ```text
-.
-├── README.md
-├── ENVIRONMENT.md
-├── requirements.txt
-├── export_release_assets.py
-└── release_assets/
-    ├── 01_Metadata/
-    ├── 02_Quality_Control/
-    ├── 03_Results/
-    ├── 04_Models/
-    ├── 05_Code/
-    ├── release_asset_manifest.json
-    ├── release_asset_inventory.csv
-    ├── SHA256SUMS.txt
-    └── MISSING_ASSETS.txt
+Manual labels      : 482
+Automatic labels   : 1756
+Total labels       : 2238
+STATUS             : PASS
 ```
+
+---
+
+## Step 3 — Optional one-case reproducibility smoke test
+
+Before processing the complete development cohort, Stage 1A can be tested
+on one case:
+
+```bash
+PDAC_MAX_CASES=1 python src/pipeline/stage1a_localizer_preprocessing.py
+```
+
+A successful smoke test should:
+
+- retrieve one CT member from the public remote archive;
+- verify source integrity;
+- match CT/annotation geometry;
+- generate a `(96, 96, 160)` CT array;
+- store CT values as `int16`;
+- use the locked `[-200, 300] HU` range;
+- create a durable preprocessing ledger;
+- access zero locked-test cases.
+
+`PDAC_MAX_CASES` is for testing only and must not be used for the complete
+reproduction run.
+
+---
+
+## Step 4 — Full reproduction workflow
+
+The complete execution order is documented in:
+
+**`docs/RUN_ORDER.md`**
+
+The definitive final manuscript workflow is:
+
+```text
+Stage 1A
+  -> Stage 1B
+  -> Stage 2A
+  -> Stage 2B
+  -> Stage 2C
+  -> Stage 2D frozen geometry protocol
+  -> Stage 2E
+  -> Stage 3A
+  -> Stage 3B
+  -> R1A
+  -> R1B
+  -> R1C
+  -> R1D
+  -> R1E
+  -> R1F / R1G
+  -> R1H / R1I
+  -> R1J
+  -> R2A
+```
+
+---
+
+## Important distinction: final vs historical workflow
+
+The repository preserves the earlier Stage 4–7 scripts for provenance.
+
+They must not be interpreted as the definitive final experimental sequence.
+
+In the final revision:
+
+- R1A performs train-only masked-context self-supervised pretraining;
+- R1B performs the leakage-free SSL-vs-random supervised comparison;
+- R1B initializes the SSL arm from `stageR1a_ssl_final.pt`;
+- Stage 5A is retained only as a historical frozen protocol dependency for
+  locked optimization parameters;
+- R1E freezes model selection and the deployment threshold before blind tests;
+- R1F–R1I perform the locked internal/external inference and evaluation;
+- R1J creates the final revision evidence freeze;
+- R2A performs post-freeze analyses without retraining or changing the
+  deployment threshold.
+
+---
+
+## Reproducibility validation performed for v1.1.0 staging
+
+The following checks were performed while preparing this expanded release:
+
+- all 35 Python scripts passed syntax validation;
+- no remaining machine-specific filesystem paths were detected;
+- the clean workspace initializer reproduced all 21 frozen prerequisite files;
+- PANORAMA label bootstrap returned exactly 482 manual and 1,756 automatic labels;
+- no downloaded label was a Git-LFS pointer;
+- all four remote CT archives returned valid HTTP 206 byte-range responses;
+- a CT study was recovered directly from the remote ZIP inventory;
+- recovered CT size matched the frozen uncompressed size;
+- recovered CT CRC32 matched the frozen CRC32;
+- the recovered NIfTI volume was readable;
+- isolated Stage 1A processing successfully produced one valid
+  `(96, 96, 160)` `int16` CT sample;
+- the Stage 1A smoke test accessed zero locked-test cases.
+
+These checks validate repository portability, public-source reconstruction,
+and the initial preprocessing path. They do not claim that every full
+training stage was freshly rerun during preparation of this software release.
+
+---
+
+## Resumability
+
+Several computationally expensive stages were designed to be resumable.
+When a resumable stage reports that the session is incomplete, rerun the
+same command. Existing durable outputs and ledgers are checked before
+remaining cases are processed.
+
+---
 
 ## Reproducibility boundaries
 
-This repository supports auditability and partial computational
-reproducibility of the reported workflow. It does not redistribute the
-third-party CT volumes or source masks, and it should not be interpreted as a
-stand-alone clinical product. Prospective and truly independent clinical
-validation remain necessary before clinical use.
+This repository does not redistribute raw third-party medical imaging data.
 
-## Versioning and archival
+It provides the study-generated software and frozen metadata needed to
+reconstruct the experiment from the original public sources.
 
-For publication, the GitHub repository should be frozen as a versioned release
-(e.g. `v1.0.0`) and archived in a DOI-minting repository such as Zenodo. The
-resulting DOI should be inserted into the manuscript's Code Availability
-statement and used to cite the exact release associated with the paper.
+Third-party datasets remain governed by their original licenses, citations,
+and distribution terms.
 
-## Licence
+The MIT license in this repository applies to study-generated software and
+does not supersede third-party dataset licenses.
 
-Original study-generated software authored for this repository is released
-under the MIT License; see `LICENSE`.
+---
 
-The MIT License does **not** apply to third-party CT data, source masks,
-annotations, clinical metadata, or dataset-derived material whose reuse is
-governed by the original data providers.
+## Citation
 
-PANORAMA-derived material remains subject to the applicable PANORAMA terms,
-including CC BY-NC 4.0 where applicable.
+For the archived v1.0.0 software release:
 
-See `THIRD_PARTY_DATA_NOTICE.md` for details.
+```text
+https://doi.org/10.5281/zenodo.21998228
+```
+
+For the expanded v1.1.0 release, use its version-specific DOI after the
+new Zenodo archive has been published.
+
+---
+
+## Reproducibility support files
+
+- `docs/RUN_ORDER.md` — authoritative stage-by-stage execution order
+- `scripts/init_workspace.py` — clean workspace construction
+- `scripts/bootstrap_panorama_labels.py` — exact public-label retrieval
+- `protocols/` — frozen study-generated metadata and protocol locks
+- `src/pipeline/` — Stage 1–7 provenance/development code
+- `src/revision_r1/` — definitive R1 workflow
+- `src/revision_r2/` — post-freeze analyses

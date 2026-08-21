@@ -1,0 +1,197 @@
+{
+  "stage": "6B-D",
+  "study_id": "100118_00001",
+  "purpose": "TARGETED_POSTFREEZE_CT_MASK_GEOMETRY_VISUAL_VALIDATION",
+  "model_inference_repeated": false,
+  "prediction_files_modified": false,
+  "raw_ct_or_mask_modified": false,
+  "metric_computation_performed": false,
+  "batch_number": 1,
+  "member_name": "100118_00001_0000.nii.gz",
+  "compressed_transfer_bytes": 71118004,
+  "selected_range_endpoint": "https://zenodo.org/api/records/13715870/files/batch_1.zip/content",
+  "ct_shape": [
+    512,
+    512,
+    258
+  ],
+  "mask_shape": [
+    512,
+    512,
+    258
+  ],
+  "ct_spacing_mm": [
+    0.8359375,
+    0.8359375,
+    1.5
+  ],
+  "mask_spacing_mm": [
+    0.8359375,
+    0.8359375,
+    1.5
+  ],
+  "ct_orientation": "LPI",
+  "mask_orientation": "LPS",
+  "shape_match": true,
+  "orientation_match": false,
+  "raw_affine_match": false,
+  "maximum_absolute_affine_difference_mm": 3.0,
+  "ct_affine": [
+    [
+      -0.8359375,
+      0.0,
+      -0.0,
+      199.58203125
+    ],
+    [
+      0.0,
+      -0.8359375,
+      -0.0,
+      396.08203125
+    ],
+    [
+      0.0,
+      0.0,
+      -1.5,
+      1649.9000244140625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "mask_affine": [
+    [
+      -0.8359375,
+      0.0,
+      0.0,
+      199.58203125
+    ],
+    [
+      0.0,
+      -0.8359375,
+      0.0,
+      396.08203125
+    ],
+    [
+      0.0,
+      0.0,
+      1.5,
+      1649.9000244140625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "canonical_ct_shape": [
+    512,
+    512,
+    258
+  ],
+  "canonical_mask_shape": [
+    512,
+    512,
+    258
+  ],
+  "canonical_shape_match": true,
+  "canonical_affine_match": false,
+  "canonical_ct_affine": [
+    [
+      -0.8359375,
+      0.0,
+      0.0,
+      199.58203125
+    ],
+    [
+      0.0,
+      -0.8359375,
+      0.0,
+      396.08203125
+    ],
+    [
+      0.0,
+      0.0,
+      1.5,
+      1264.4000244140625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "canonical_mask_affine": [
+    [
+      -0.8359375,
+      0.0,
+      0.0,
+      199.58203125
+    ],
+    [
+      0.0,
+      -0.8359375,
+      0.0,
+      396.08203125
+    ],
+    [
+      0.0,
+      0.0,
+      1.5,
+      1649.9000244140625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "selected_overlay_slices": [
+    54,
+    65,
+    72,
+    87,
+    98,
+    109
+  ],
+  "pancreas_voxels": 60609,
+  "vessel_voxels": 64727,
+  "lesion_voxels": 0,
+  "pancreas_hu_statistics": {
+    "count": 60609,
+    "minimum": -89.0,
+    "p01": -12.0,
+    "median": 79.0,
+    "p99": 123.0,
+    "maximum": 160.0,
+    "fraction_minus150_to_300": 1.0
+  },
+  "existing_stage6b_geometry_record": {
+    "study_id": "100118_00001",
+    "patient_id": 100118,
+    "diagnostic_label": "non-PDAC",
+    "annotation_type": "automatic",
+    "mask_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/00_Raw/PANORAMA/Automatic_Labels/100118_00001.nii.gz",
+    "raw_mask_shape_json": "[512, 512, 258]",
+    "raw_mask_spacing_mm_json": "[0.8359375, 0.8359375, 1.5]",
+    "raw_mask_orientation": "LPS",
+    "canonical_mask_shape_json": "[512, 512, 258]",
+    "canonical_mask_spacing_mm_json": "[0.8359375, 0.8359375, 1.5]",
+    "canonical_ct_shape_json": "[512, 512, 258]",
+    "canonical_ct_spacing_mm_json": "[0.8359375, 0.8359375, 1.5]",
+    "shape_match": true,
+    "spacing_match": true,
+    "affine_match": false,
+    "maximum_absolute_affine_difference": 385.5,
+    "geometry_status": "POST_FREEZE_GEOMETRY_REVIEW_REQUIRED"
+  },
+  "overlay_path": "/content/drive/MyDrive/PDAC_Public_Q1_Project/02_Quality_Control/stage6b_100118_index_alignment_overlay.png",
+  "visual_review_status": "PENDING_HUMAN_VISUAL_REVIEW",
+  "checked_at_utc": "2026-08-06T12:06:37.414332+00:00"
+}

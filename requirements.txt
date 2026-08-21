@@ -1,5 +1,11 @@
+# PDAC reproducibility environment — v1.1.0
+# Python 3.12 recommended
+
+matplotlib==3.10.0
+nibabel==5.4.2
 numpy==2.0.2
-pandas==2.2.2
+pandas==2.2.3
+requests==2.32.4
 scipy==1.16.3
 scikit-learn==1.6.1
 torch==2.11.0
