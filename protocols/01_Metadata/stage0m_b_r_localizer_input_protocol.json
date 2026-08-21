@@ -1,0 +1,46 @@
+{
+  "stage": "0M-B-R",
+  "created_at_utc": "2026-07-29T19:12:53.553544+00:00",
+  "result": "PASS_FIT_TO_CANVAS_LOCALIZER_INPUT_LOCKED",
+  "localizer_input_geometry_locked": true,
+  "canonical_orientation": "LPS",
+  "selected_candidate": "F1_96x96x160",
+  "canvas_shape_voxels": [
+    96,
+    96,
+    160
+  ],
+  "padding_voxels_per_side": 4,
+  "geometry_method": "UNIFORM_ISOTROPIC_WHOLE_VOLUME_FIT_FOLLOWED_BY_SYMMETRIC_PADDING",
+  "case_specific_effective_spacing": true,
+  "effective_spacing_formula": "max(canonical_volume_extent_mm / (canvas_shape - 2*padding_voxels))",
+  "full_volume_truncation_permitted": false,
+  "development_volume_coverage": 1.0,
+  "resolution_evidence": {
+    "minimum_pancreas_axis_voxels": 4.10636977789847,
+    "p01_pancreas_axis_voxels": 8.765625,
+    "median_pancreas_axis_voxels": 16.37257128034319,
+    "p01_estimated_pancreas_voxels": 211.46663141018004,
+    "maximum_effective_spacing_mm": 8.592105263157896
+  },
+  "input_intensity": {
+    "clip_HU": [
+      -200,
+      300
+    ],
+    "normalize": "(clip(HU,-200,300)-50)/250",
+    "padding_HU": -200
+  },
+  "target": {
+    "primary": "BINARY_PANCREAS_MASK_LABEL_4",
+    "derived_target": "PANCREAS_CENTER_HEATMAP_AND_NORMALIZED_CENTER",
+    "mask_interpolation": "NEAREST_NEIGHBOR"
+  },
+  "inverse_mapping_required": true,
+  "splits": {
+    "train": 1376,
+    "validation": 295,
+    "locked_tests_used": 0
+  },
+  "next_required_stage": "Sequential remote CT preprocessing for localizer training."
+}

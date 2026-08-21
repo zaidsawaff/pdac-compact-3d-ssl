@@ -1,0 +1,28 @@
+{
+  "stage": "2D",
+  "created_at_utc": "2026-07-30T14:28:51.404266+00:00",
+  "selection_scope": "VALIDATION_ONLY",
+  "selected_candidate": "E5_240x192x128",
+  "shape": [
+    240,
+    192,
+    128
+  ],
+  "spacing_mm": [
+    1.25,
+    1.25,
+    2.0
+  ],
+  "physical_fov_mm": [
+    300.0,
+    240.0,
+    256.0
+  ],
+  "full_validation_containment": 1.0,
+  "full_PDAC_containment": 1.0,
+  "minimum_validation_margin_mm": 9.078814944083092,
+  "voxel_increase_vs_R4": 0.22448979591836737,
+  "selection_reason": "SMALLEST_DIVISIBLE_BY_16_CROP_WITH_COMPLETE_LEARNED_LOCALIZER_VALIDATION_CONTAINMENT",
+  "locked_test_cases_accessed": 0,
+  "crop_geometry_locked": true
+}

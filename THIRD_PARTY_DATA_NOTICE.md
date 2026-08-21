@@ -1,48 +1,64 @@
-# Third-Party Data and Metadata Notice
+# Third-Party Data Notice
 
-## Scope of the MIT License
+This repository contains study-generated software, metadata, protocol locks,
+quality-control artifacts, and reproducibility utilities.
 
-The repository-level MIT License applies only to study-generated software
-and original code for which the repository authors hold the applicable rights.
-
-It does not relicense third-party medical imaging data, source annotations,
-clinical metadata, or dataset-derived information.
+**Raw third-party medical imaging data are not distributed under the MIT
+license of this repository.**
 
 ## PANORAMA
 
-The study uses the PANORAMA Challenge Public Training and Development Dataset.
+The study uses CT imaging and segmentation annotations originating from
+the public PANORAMA resources.
 
-The original imaging data must be obtained from the official PANORAMA
-distribution and are not redistributed in this repository.
+The reproducibility utilities retrieve or access these materials from their
+original public distribution locations rather than redistributing the raw
+medical imaging data as repository-owned content.
 
-PANORAMA annotations and clinical information are provided by the official
-DIAGNijmegen/panorama_labels project. Materials derived from those resources
-remain subject to the applicable original terms, including the
-Creative Commons Attribution-NonCommercial 4.0 International
-(CC BY-NC 4.0) license where applicable.
+The exact PANORAMA label repository state used by the study is frozen at:
 
-Official annotation repository:
-https://github.com/DIAGNijmegen/panorama_labels
+```text
+commit bf1d6ba3
+```
 
-PANORAMA Zenodo records used in the study:
+Expected annotation counts are:
 
-- https://doi.org/10.5281/zenodo.13715870
-- https://doi.org/10.5281/zenodo.13742336
-- https://doi.org/10.5281/zenodo.11034011
-- https://doi.org/10.5281/zenodo.10999754
+- Manual labels: 482
+- Automatic labels: 1,756
+- Total: 2,238
 
-## Medical Segmentation Decathlon and NIH Pancreas-CT
+PANORAMA CT volumes are accessed from the original public Zenodo archives
+using the study-generated frozen remote ZIP-member inventory and HTTP
+byte-range requests.
 
-Materials originating from the Medical Segmentation Decathlon or
-NIH Pancreas-CT remain subject to the licenses and terms of their
-respective original providers.
+PANORAMA materials remain governed by the terms specified by their original
+authors and distribution records, including CC BY-NC 4.0 where applicable.
 
-## Identifiers
+## Medical Segmentation Decathlon (MSD)
 
-Patient and study identifiers retained in study-generated manifests are
-anonymized source-dataset identifiers used solely to preserve cohort identity,
-patient grouping, split reproducibility, and auditability. They are not
-original hospital medical-record identifiers.
+The external evaluation workflow includes the public pancreatic CT data used
+from the Medical Segmentation Decathlon source.
 
-Users of this repository are responsible for complying with the terms of all
+These data are not redistributed under this repository's MIT license.
+Users must obtain and use them according to the original dataset terms.
+
+## NIH pancreatic CT data
+
+The study also uses a public NIH pancreatic CT cohort as an external
+negative/stress-test source.
+
+These data are not redistributed under this repository's MIT license.
+Users must obtain and use them according to the original distribution terms.
+
+## License scope
+
+The MIT license in this repository applies only to software and other
+study-generated material for which the repository authors hold the relevant
+rights.
+
+It does not replace, modify, sublicense, or override the licenses, access
+conditions, attribution requirements, or other terms associated with
 third-party datasets.
+
+Researchers reproducing the study are responsible for reviewing and complying
+with the terms of each original data source.

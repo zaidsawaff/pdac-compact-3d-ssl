@@ -1,0 +1,8 @@
+partition,diagnostic_label,annotation_type,cases,patients,persistent_files,stage3b_qc_passed
+train,non-pdac,automatic,973,963,973,973
+train,pdac,automatic,136,135,136,136
+train,pdac,manual,267,266,267,267
+validation,non-pdac,automatic,206,205,206,206
+validation,non-pdac,manual,1,1,1,1
+validation,pdac,automatic,30,29,30,30
+validation,pdac,manual,58,58,58,58

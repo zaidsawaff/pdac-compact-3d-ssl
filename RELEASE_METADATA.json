@@ -1,0 +1,18 @@
+{
+  "release_version": "1.1.0",
+  "release_status": "release_candidate",
+  "study_title": "Compact Self-Supervised 3D Deep Learning for CT-Based Pancreatic Lesion Detection and Segmentation",
+  "repository": "https://github.com/zaidsawaff/pdac-compact-3d-ssl",
+  "previous_archived_release": {
+    "version": "1.0.0",
+    "version_doi": "10.5281/zenodo.21998228",
+    "concept_doi": "10.5281/zenodo.21998227"
+  },
+  "v1_1_0_version_doi": null,
+  "panorama_labels_commit": "bf1d6ba3",
+  "scientific_script_count": 35,
+  "frozen_protocol_file_count": 21,
+  "frozen_reference_asset_file_count": 45,
+  "contains_raw_medical_data": false,
+  "note": "v1.1.0 expands the reproducibility package with the complete scientific source tree and retains the previously frozen checkpoints, prediction manifests, audits, protocol locks, and publication evidence under release_assets/. The version-specific DOI will be added only after the corresponding Zenodo release is published."
+}
